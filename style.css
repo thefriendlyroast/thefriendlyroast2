@@ -1,14 +1,15 @@
 /* ============================================================
    the friendly roast — one-page site
    Refined French-editorial style: warm beige paper, dark brown
-   ink, burnt-orange accent, BC Civitas Light (with Spectral
-   Light as the free stand-in when BC Civitas isn't installed).
+   ink, burnt-orange accent, Lemon Tree (with Fraunces as the
+   free stand-in when Lemon Tree isn't installed).
    ============================================================ */
 
-/* If you license the real BC Civitas, upload the .woff2 files to
-   the repo and add @font-face rules here — then every visitor
-   sees it, not just people with the font installed. */
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&display=swap');
+/* Lemon Tree (JumboDesign) is a commercial font. If you buy its
+   web licence, upload the .woff2 files to the repo and add
+   @font-face rules here — then every visitor sees the real
+   Lemon Tree, not just people with it installed. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap');
 
 :root {
   --beige: #E9DFCC;
@@ -30,7 +31,7 @@ body {
   margin: 0;
   background: var(--beige);
   color: var(--ink);
-  font-family: "BC Civitas Light", "BC Civitas", "Spectral", Georgia, serif;
+  font-family: "Lemon Tree", "Fraunces", Georgia, serif;
   font-weight: 300;
   font-size: 1.125rem;
   line-height: 1.7;
@@ -86,7 +87,7 @@ img { max-width: 100%; }
 
 .subscribe-btn:hover { background: var(--accent-dark); }
 
-/* ---------- What's Roasting: heading + the steaming snail ---------- */
+/* ---------- What's Roasting: heading + the steaming coffee ---------- */
 .hero {
   text-align: center;
   padding: 72px 24px 96px;
@@ -100,9 +101,9 @@ img { max-width: 100%; }
   margin: 0 auto 72px;
 }
 
-/* The snail tempts you: it sways gently as if alive, steam rises
-   from it (something is freshly roasting), and it lifts on hover.
-   Clicking it reveals the coffee. */
+/* The current coffee's painting tempts you: it sways gently as
+   if alive, steam rises from it (something is freshly roasting),
+   and it lifts on hover. Clicking it reveals the coffee. */
 .roast-button {
   position: relative;
   display: inline-block;
@@ -113,14 +114,14 @@ img { max-width: 100%; }
   animation: snail-sway 5s ease-in-out infinite alternate;
 }
 
-.roast-button .logo {
-  height: 280px;
-  width: auto;
+.roast-button img {
+  width: min(500px, 92%);
+  height: auto;
   display: block;
   transition: transform 0.3s ease;
 }
 
-.roast-button:hover .logo { transform: translateY(-6px) rotate(-1deg); }
+.roast-button:hover img { transform: translateY(-6px) rotate(-1deg); }
 
 /* Steam: three wisps rising above the snail, one after another */
 .steam {
@@ -161,7 +162,7 @@ img { max-width: 100%; }
 /* Respect visitors who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
   .roast-button, .steam i { animation: none; }
-  .roast-button .logo { transition: none; }
+  .roast-button img { transition: none; }
 }
 
 /* ---------- Sections ---------- */
@@ -413,8 +414,6 @@ img { max-width: 100%; }
   .logo { height: 110px; }
 
   .roast-button { padding-top: 48px; }
-
-  .roast-button .logo { height: 200px; }
 
   .section { padding: 64px 20px; }
 
