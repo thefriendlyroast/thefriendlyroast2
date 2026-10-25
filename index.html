@@ -25,13 +25,14 @@
   <main>
 
     <!-- ================= WHAT'S ROASTING =================
-         The heading and the bag are all that's here.
-         Clicking the bag opens the coffee currently roasting
-         (script.js reads it from coffees.js). -->
+         The heading and the snail are all that's here.
+         The snail steams gently — clicking it opens the coffee
+         currently roasting (script.js reads it from coffees.js). -->
     <section id="whats-roasting" class="hero">
       <h1>Michael roasts one coffee at a time</h1>
-      <button type="button" class="bag-button" id="open-current">
-        <img src="images/bag.png" alt="the friendly roast — a bag of coffee">
+      <button type="button" class="roast-button" id="open-current" aria-label="See what's roasting">
+        <span class="steam" aria-hidden="true"><i></i><i></i><i></i></span>
+        <img class="logo" src="images/snail.jpg" alt="the friendly roast — the snail logo">
       </button>
     </section>
 
@@ -96,7 +97,18 @@
             </div>
           </li>
         </ul>
-     
+        <p>
+          The passage of time changes all. It changes the unroasted coffee and
+          roasted coffee. The roaster and coffee drinker must adapt.
+        </p>
+        <p>
+          The coffee grower must adapt. Michael hopes coffee continues to grow
+          on this planet.
+        </p>
+        <p>
+          It would be cool if you buy some of this coffee then Michael can
+          roast more.
+        </p>
       </div>
       <img class="ghost-long" src="images/ghost-long.jpg"
            alt="the friendly roast — the long ghost logo">
