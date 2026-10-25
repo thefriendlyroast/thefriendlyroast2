@@ -29,6 +29,7 @@ body {
   font-family: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 1.0625rem;
   line-height: 1.7;
+  text-transform: lowercase;   /* the whole site renders lower case */
 }
 
 img { max-width: 100%; }
@@ -118,6 +119,33 @@ img { max-width: 100%; }
 }
 
 .roast-button:hover img { transform: translateY(-6px) rotate(-1deg); }
+
+/* The name + availability link below the painting */
+.hero-name {
+  margin: 40px 0 0;
+  font-size: 1.2rem;
+}
+
+/* The "Please can I buy a bag?" link below that */
+.hero-buy {
+  margin: 20px 0 0;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+/* Both hero links: quiet text with an orange hairline underline */
+.hero-name a,
+.hero-buy a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+.hero-name a:hover,
+.hero-buy a:hover {
+  color: var(--accent);
+}
 
 /* Steam: three wisps rising above the painting, one after another */
 .steam {
@@ -366,7 +394,6 @@ img { max-width: 100%; }
 
 .facts dt {
   font-size: 0.85rem;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
 }
