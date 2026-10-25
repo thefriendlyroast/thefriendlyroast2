@@ -122,6 +122,15 @@ modal.addEventListener('change', function (event) {
   if (event.target && event.target.id === 'coffee') updateSizeRow();
 });
 
+// ---------- The Nano Roastery story: expand / collapse ----------
+var storyToggle = document.getElementById('story-toggle');
+var story = document.getElementById('story');
+if (storyToggle && story) {
+  storyToggle.addEventListener('click', function () {
+    story.hidden = !story.hidden;
+  });
+}
+
 // ---------- The hero photo: the coffee that is currently roasting ----------
 var currentCoffee = COFFEES.filter(function (coffee) {
   return coffee.status === 'roasting';
