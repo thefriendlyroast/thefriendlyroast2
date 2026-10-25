@@ -86,7 +86,7 @@ img { max-width: 100%; }
 
 .subscribe-btn:hover { background: var(--accent-dark); }
 
-/* ---------- What's Roasting: heading + bag ---------- */
+/* ---------- What's Roasting: heading + the steaming snail ---------- */
 .hero {
   text-align: center;
   padding: 72px 24px 96px;
@@ -100,22 +100,69 @@ img { max-width: 100%; }
   margin: 0 auto 72px;
 }
 
-.bag-button {
+/* The snail tempts you: it sways gently as if alive, steam rises
+   from it (something is freshly roasting), and it lifts on hover.
+   Clicking it reveals the coffee. */
+.roast-button {
+  position: relative;
   display: inline-block;
   background: none;
   border: none;
-  padding: 0;
+  padding: 64px 0 0;              /* room above the snail for the steam */
   cursor: pointer;
+  animation: snail-sway 5s ease-in-out infinite alternate;
 }
 
-.bag-button img {
-  width: min(560px, 92%);
+.roast-button .logo {
+  height: 280px;
+  width: auto;
   display: block;
-  margin: 0 auto;
   transition: transform 0.3s ease;
 }
 
-.bag-button:hover img { transform: translateY(-6px) rotate(-1deg); }
+.roast-button:hover .logo { transform: translateY(-6px) rotate(-1deg); }
+
+/* Steam: three wisps rising above the snail, one after another */
+.steam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 120px;
+  height: 64px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.steam i {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0;
+  animation: steam-rise 2.7s ease-in-out infinite;
+}
+
+.steam i:nth-child(1) { left: 38%; height: 22px; }
+.steam i:nth-child(2) { left: 50%; height: 34px; animation-delay: 0.9s; }
+.steam i:nth-child(3) { left: 62%; height: 26px; animation-delay: 1.8s; }
+
+@keyframes steam-rise {
+  0%   { transform: translateY(0) scaleY(0.5); opacity: 0; }
+  30%  { opacity: 0.5; }
+  100% { transform: translateY(-40px) scaleY(1); opacity: 0; }
+}
+
+@keyframes snail-sway {
+  from { transform: rotate(-1.2deg); }
+  to   { transform: rotate(1.2deg); }
+}
+
+/* Respect visitors who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .roast-button, .steam i { animation: none; }
+  .roast-button .logo { transition: none; }
+}
 
 /* ---------- Sections ---------- */
 .section {
@@ -364,6 +411,10 @@ img { max-width: 100%; }
   }
 
   .logo { height: 110px; }
+
+  .roast-button { padding-top: 48px; }
+
+  .roast-button .logo { height: 200px; }
 
   .section { padding: 64px 20px; }
 
