@@ -93,7 +93,13 @@ function currentCoffeePopup(coffee) {
     factList(coffee) +
     paragraphs(coffee) +
     '<p>Coffee roasting is a hobby that fits into life among work, family, music, life. Solving the roast mystery one bean at a time is the chosen pace.</p>' +
-    '<p>That coffee is tasted and pondered every day for months. The roast profile adapts. The longer the coffee is in possession the more completely it flavour is communicated through the roast profile.</p>' +
+    '<p>That coffee is tasted and pondered every day for months. The roast profile adapts. The longer the coffee is in possession the more completely it flavour is communicated through the roast profile.</p>'
+  );
+}
+
+// The popup that opens when someone clicks "Please can I buy a bag?"
+function buyCoffeePopup(coffee) {
+  return (
     '<h3 class="buy-heading">Please can I buy a bag?</h3>' +
     '<p>Yeah sure, send me a message and I\u2019ll get back to you.</p>' +
     requestForm(coffee)
@@ -136,15 +142,32 @@ var currentCoffee = COFFEES.filter(function (coffee) {
   return coffee.status === 'roasting';
 })[0];
 
-// The hero always shows the current roast's painting
+// The hero always shows the current roast's painting, name and availability
 var heroCoffee = document.getElementById('hero-coffee');
 if (heroCoffee) {
   heroCoffee.src = currentCoffee.image;
   heroCoffee.alt = 'Taste impression \u2014 ' + currentCoffee.name + '.';
 }
 
+var currentName = document.getElementById('open-current-details');
+if (currentName) {
+  currentName.textContent = currentCoffee.name + ' \u2014 ' + currentCoffee.availability;
+}
+
+// The painting and the name link open the coffee details popup
 document.getElementById('open-current').addEventListener('click', function () {
   openModal(currentCoffeePopup(currentCoffee));
+});
+
+document.getElementById('open-current-details').addEventListener('click', function (event) {
+  event.preventDefault();
+  openModal(currentCoffeePopup(currentCoffee));
+});
+
+// "Please can I buy a bag?" opens the request form popup
+document.getElementById('open-buy').addEventListener('click', function (event) {
+  event.preventDefault();
+  openModal(buyCoffeePopup(currentCoffee));
   updateSizeRow();
 });
 
