@@ -123,13 +123,13 @@ img { max-width: 100%; }
 /* The name + availability link below the painting */
 .hero-name {
   margin: 40px 0 0;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 /* The "Please can I buy a bag?" link below that */
 .hero-buy {
   margin: 20px 0 0;
-  font-size: 1.7rem;
+  font-size: 1.05rem;
   font-weight: 400;
 }
 
