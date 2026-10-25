@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>the friendly roast</title>
+  <meta name="description" content="the friendly roast — a nano roastery. Michael roasts one coffee at a time.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MASTHEAD: logo + menu -->
+  <header class="masthead">
+    <a class="logo-link" href="#whats-roasting">
+      <img class="logo" src="images/snail.jpg" alt="the friendly roast logo">
+    </a>
+    <nav class="menu">
+      <a href="#whats-roasting">What's Roasting</a>
+      <a href="#nano-roastery">Nano Roastery</a>
+      <a href="#coffee-archive">Coffee Archive</a>
+      <a class="subscribe-btn" href="#subscribe">Subscribe</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= WHAT'S ROASTING =================
+         The heading and the bag are all that's here.
+         Clicking the bag opens the coffee currently roasting
+         (script.js reads it from coffees.js). -->
+    <section id="whats-roasting" class="hero">
+      <h1>Michael roasts one coffee at a time</h1>
+      <button type="button" class="bag-button" id="open-current">
+        <img src="images/bag.png" alt="the friendly roast — a bag of coffee">
+      </button>
+    </section>
+
+    <!-- ================= NANO ROASTERY ================= -->
+    <section id="nano-roastery" class="section">
+      <h2 class="section-title">Roasting is half art, half science</h2>
+      <div class="prose">
+        <p>
+          Chemical processes occur as the bean is heated. The bean can be
+          heated via conduction, convection and radiation. Roasting machines
+          maximise convection because conduction burns the outside and
+          radiation is expensive. The perfect roast profile allows the
+          flavours of seeds of a coffee tree grown near the equator to show
+          themselves. Too much heat early on causes the inside of the bean to
+          burn. Too little heat or too long a roast bakes the flavours, muting
+          acidity, aromatics and sweetness. Like so many of us a roaster seeks
+          balance.
+        </p>
+        <blockquote class="quote">
+          "I roast coffee to see how the flavours transform - in each roast,
+          each brew, each sip."
+        </blockquote>
+        <ul class="timeline">
+          <li>
+            <span class="year">2021</span>
+            <div>
+              <strong>Kasper's roaster.</strong>
+              Michael's friend Kasper taught me to roast on his Gene Cafe
+              CBR-101e — 250 grams at a time, one experiment after another.
+              Kasper did online roasting courses at night. By day they put pen
+              to paper noting down readings from the temperature probe on the
+              Gene and the two other temperature probes Kasper had added into
+              the machine. The simple on-off heating element in the Gene no
+              longer satisfying Kasper's desire for roast control. Soon a
+              circuit board sat beside it plugged a laptop running artisan.
+            </div>
+          </li>
+          <li>
+            <span class="year">2023</span>
+            <div>
+              <strong>Going bigger.</strong>
+              Michael bit it and got an Aillio Bullet, moving up to 1 kg
+              batches. He bought some nice brown paper coffee bags, a stamp and
+              a label maker. Quietly Michael stole the brand 'the friendly
+              roast' from Kasper without really asking. Kasper forgave him
+              instantly. Michael panicked over every roast. He asked heaps of
+              questions to Kasper and his local roast guru, Fabian from Chiva
+              Coffee in Den Haag.
+            </div>
+          </li>
+          <li>
+            <span class="year">Today</span>
+            <div>
+              <strong>Still curious.</strong>
+              Michael sources beans from importers such as The Coffee Quest,
+              This Side Up, Ally Coffee, Bette Buna, Attesa. Kasper and
+              Michael and occasionally their wives cup the samples, silently.
+              When a coffee compels Michael, usually because Kasper praises it,
+              Michael thinks "I could happily drink this for the next few
+              months" and the next roast mystery begins. He keeps roasting,
+              tasting and tweaking — and sharing whatever he finds compelling.
+            </div>
+          </li>
+        </ul>
+        <p>
+          The passage of time changes all. It changes the unroasted coffee and
+          roasted coffee. The roaster and coffee drinker must adapt.
+        </p>
+        <p>
+          The coffee grower must adapt. Michael hopes coffee continues to grow
+          on this planet.
+        </p>
+        <p>
+          It would be cool if you buy some of this coffee then Michael can
+          roast more.
+        </p>
+      </div>
+      <img class="ghost-long" src="images/ghost-long.jpg"
+           alt="the friendly roast — the long ghost logo">
+    </section>
+
+    <!-- ================= COFFEE ARCHIVE =================
+         The photos are built by script.js from coffees.js.
+         Clicking a photo opens all of that coffee's information. -->
+    <section id="coffee-archive" class="section">
+      <h2 class="section-title">the coffees remembered</h2>
+      <div class="archive-grid" id="archive-grid"></div>
+    </section>
+
+    <!-- ================= SUBSCRIBE =================
+         Powered by Buttondown (free for up to 100 subscribers).
+
+         SETUP (one time):
+           1. Sign up at https://buttondown.com and create a newsletter.
+           2. In your Buttondown settings, find the "embed" form code and
+              note your newsletter address (e.g. "thefriendlyroast").
+           3. Replace YOUR_BUTTONDOWN_USERNAME in the action link below
+              with that address.
+
+         THEN, whenever you add a new coffee to coffees.js, write a new
+         email in Buttondown and send it to your subscribers. -->
+    <section id="subscribe" class="section subscribe">
+      <form class="subscribe-form"
+            action="https://buttondown.email/api/emails/embed-subscribe/YOUR_BUTTONDOWN_USERNAME"
+            method="post">
+        <input type="email" id="subscribe-email" name="email" placeholder="email" required>
+        <button type="submit" class="subscribe-btn">Subscribe</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2023 the friendly roast. Roasted with friends, for friends.</p>
+  </footer>
+
+  <!-- POPUP OVERLAY — filled by script.js when someone opens a coffee -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel">
+      <button type="button" class="modal-close" data-close aria-label="Close">&times;</button>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="coffees.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
