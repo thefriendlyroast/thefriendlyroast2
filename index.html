@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>the friendly roast</title>
-  <meta name="description" content="the friendly roast — a nano roastery. Michael is currently roasting this coffee">
+  <meta name="description" content="the friendly roast — a nano roastery. Michael roasts one coffee at a time.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,16 +20,23 @@
   <main>
 
     <!-- ================= WHAT'S ROASTING =================
-         The heading and the current coffee's painting are all
-         that's here. The painting steams gently — clicking it
-         opens the coffee's details. script.js fills in the photo
-         from coffees.js, so it always shows what is roasting. -->
+         The heading, the current coffee's painting, and two
+         clickable links. The painting and the name link open
+         the coffee's details; "Please can I buy a bag?" opens
+         the request form. script.js fills in the photo, name
+         and availability from coffees.js. -->
     <section id="whats-roasting" class="hero">
       <h1>Michael roasts one coffee at a time</h1>
       <button type="button" class="roast-button" id="open-current" aria-label="See what's roasting">
         <span class="steam" aria-hidden="true"><i></i><i></i><i></i></span>
         <img class="hero-coffee" id="hero-coffee" src="images/mukunga.jpg" alt="Taste impression — Mukunga.">
       </button>
+      <p class="hero-name">
+        <a href="#whats-roasting" id="open-current-details">Mukunga — July 2026 - present</a>
+      </p>
+      <h2 class="hero-buy">
+        <a href="#whats-roasting" id="open-buy">Please can I buy a bag?</a>
+      </h2>
     </section>
 
     <!-- ================= NANO ROASTERY ================= -->
@@ -58,14 +65,14 @@
             <span class="year">2021</span>
             <div>
               <strong>Kasper's roaster.</strong>
-              Michael's friend Kasper taught him on his Gene Cafe
-              CBR-101e; 250 grams at a time, one experiment after another.
+              Michael's friend Kasper taught me to roast on his Gene Cafe
+              CBR-101e — 250 grams at a time, one experiment after another.
               Kasper did online roasting courses at night. By day they put pen
               to paper noting down readings from the temperature probe on the
               Gene and the two other temperature probes Kasper had added into
               the machine. The simple on-off heating element in the Gene no
               longer satisfying Kasper's desire for roast control. Soon a
-              circuit board sat beside it plugged a laptop running Artisan.
+              circuit board sat beside it plugged a laptop running artisan.
             </div>
           </li>
           <li>
@@ -87,7 +94,7 @@
               <strong>Still curious.</strong>
               Michael sources beans from importers such as The Coffee Quest,
               This Side Up, Ally Coffee, Bette Buna, Attesa. Kasper and
-              Michael, and occasionally their wives, cup the samples, silently.
+              Michael and occasionally their wives cup the samples, silently.
               When a coffee compels Michael, usually because Kasper praises it,
               Michael thinks "I could happily drink this for the next few
               months" and the next roast mystery begins. He keeps roasting,
@@ -106,6 +113,7 @@
          at the top of the page). Clicking a photo opens all
          of that coffee's information. -->
     <section id="coffee-archive" class="section">
+      <h2 class="section-title">Coffee Archive</h2>
       <div class="archive-grid" id="archive-grid"></div>
     </section>
 
