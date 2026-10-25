@@ -1,0 +1,374 @@
+/* ============================================================
+   the friendly roast — one-page site
+   Refined French-editorial style: warm beige paper, dark brown
+   ink, burnt-orange accent, BC Civitas Light (with Spectral
+   Light as the free stand-in when BC Civitas isn't installed).
+   ============================================================ */
+
+/* If you license the real BC Civitas, upload the .woff2 files to
+   the repo and add @font-face rules here — then every visitor
+   sees it, not just people with the font installed. */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&display=swap');
+
+:root {
+  --beige: #E9DFCC;
+  --paper: #F5EFE3;
+  --ink: #33261A;
+  --muted: #7C6A52;
+  --accent: #BC5A1C;
+  --accent-dark: #9E4A15;
+  --line: #D6C9B0;
+}
+
+* { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--beige);
+  color: var(--ink);
+  font-family: "BC Civitas Light", "BC Civitas", "Spectral", Georgia, serif;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+img { max-width: 100%; }
+
+/* ---------- Masthead ---------- */
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  padding: 28px 48px;
+}
+
+/* The logo: ~4 cm tall on a Mac, ~2.4 cm on an iPhone */
+.logo {
+  height: 130px;
+  width: auto;
+  display: block;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.menu a:hover { color: var(--accent); }
+
+/* ---------- The Subscribe button (also used for Send request) ---------- */
+.subscribe-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #FBF7EE;
+  font-family: inherit;
+  font-size: 1.05rem;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover { background: var(--accent-dark); }
+
+/* ---------- What's Roasting: heading + bag ---------- */
+.hero {
+  text-align: center;
+  padding: 72px 24px 96px;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.15;
+  max-width: 22ch;
+  margin: 0 auto 72px;
+}
+
+.bag-button {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bag-button img {
+  width: min(420px, 80%);
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.bag-button:hover img { transform: translateY(-6px) rotate(-1deg); }
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 96px 32px;
+  max-width: 1160px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 48px;
+  max-width: 26ch;
+}
+
+.prose { max-width: 680px; }
+
+.prose p { margin: 0 0 1.2em; }
+
+/* ---------- Quote ---------- */
+.quote {
+  margin: 56px 0;
+  max-width: 640px;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* ---------- Timeline ---------- */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 48px 0 64px;
+  max-width: 680px;
+}
+
+.timeline li {
+  display: flex;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline li:last-child { border-bottom: none; }
+
+.timeline .year {
+  flex: 0 0 90px;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+/* ---------- Long ghost logo (end of Nano Roastery) ---------- */
+.ghost-long {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: 72px 0 0;
+}
+
+/* ---------- Coffee Archive: grid of paintings ---------- */
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 56px 40px;
+}
+
+.archive-item {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.archive-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.archive-item:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 14px 30px rgba(51, 38, 26, 0.18);
+}
+
+/* ---------- Subscribe section ---------- */
+.subscribe { text-align: center; }
+
+.subscribe-form {
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 24px;
+}
+
+.subscribe-form input {
+  font: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 8px 4px;
+  min-width: 280px;
+}
+
+.subscribe-form input:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.footer p { margin: 0; }
+
+/* ---------- Popup overlay ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow-y: auto;
+  background: rgba(51, 38, 26, 0.55);
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.modal-panel {
+  position: relative;
+  background: var(--paper);
+  max-width: 720px;
+  margin: 5vh auto 10vh;
+  padding: 56px 56px 64px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.modal-close:hover { color: var(--accent-dark); }
+
+.modal-photo {
+  width: 100%;
+  display: block;
+  margin-bottom: 32px;
+}
+
+.modal-content p { max-width: 640px; margin: 0 0 1.1em; }
+
+/* Fact list inside the popup */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px 28px;
+  margin: 32px 0 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.facts dd { margin: 2px 0 0; }
+
+.facts p { margin: 0; }
+
+/* ---------- Request form (inside the popup) ---------- */
+.buy-heading {
+  font-size: 1.7rem;
+  font-weight: 300;
+  margin: 48px 0 8px;
+}
+
+.request-form {
+  margin-top: 24px;
+  max-width: 520px;
+}
+
+.request-form label {
+  display: block;
+  margin: 24px 0 4px;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 8px 0;
+}
+
+.request-form input:focus,
+.request-form select:focus,
+.request-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.send-btn { margin-top: 32px; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 720px) {
+  .masthead {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 16px;
+  }
+
+  .logo { height: 110px; }
+
+  .section { padding: 64px 20px; }
+
+  .modal-panel {
+    margin: 2vh 12px;
+    padding: 40px 24px 48px;
+  }
+
+  .timeline li {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
