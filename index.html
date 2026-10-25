@@ -25,14 +25,15 @@
   <main>
 
     <!-- ================= WHAT'S ROASTING =================
-         The heading and the snail are all that's here.
-         The snail steams gently — clicking it opens the coffee
-         currently roasting (script.js reads it from coffees.js). -->
+         The heading and the current coffee's painting are all
+         that's here. The painting steams gently — clicking it
+         opens the coffee's details. script.js fills in the photo
+         from coffees.js, so it always shows what is roasting. -->
     <section id="whats-roasting" class="hero">
       <h1>Michael roasts one coffee at a time</h1>
       <button type="button" class="roast-button" id="open-current" aria-label="See what's roasting">
         <span class="steam" aria-hidden="true"><i></i><i></i><i></i></span>
-        <img class="logo" src="images/snail.jpg" alt="the friendly roast — the snail logo">
+        <img class="hero-coffee" id="hero-coffee" src="images/mukunga.jpg" alt="Taste impression — Mukunga.">
       </button>
     </section>
 
@@ -97,26 +98,16 @@
             </div>
           </li>
         </ul>
-        <p>
-          The passage of time changes all. It changes the unroasted coffee and
-          roasted coffee. The roaster and coffee drinker must adapt.
-        </p>
-        <p>
-          The coffee grower must adapt. Michael hopes coffee continues to grow
-          on this planet.
-        </p>
-        <p>
-          It would be cool if you buy some of this coffee then Michael can
-          roast more.
-        </p>
       </div>
-      <img class="ghost-long" src="images/ghost-long.jpg"
+      <img class="ghost-long" src="images/ghost-long.jpg" loading="lazy"
            alt="the friendly roast — the long ghost logo">
     </section>
 
     <!-- ================= COFFEE ARCHIVE =================
-         The photos are built by script.js from coffees.js.
-         Clicking a photo opens all of that coffee's information. -->
+         script.js builds this from coffees.js — only the
+         archived coffees appear here (the current roast lives
+         at the top of the page). Clicking a photo opens all
+         of that coffee's information. -->
     <section id="coffee-archive" class="section">
       <div class="archive-grid" id="archive-grid"></div>
     </section>
