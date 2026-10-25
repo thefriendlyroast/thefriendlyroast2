@@ -100,16 +100,18 @@ img { max-width: 100%; }
    and it lifts on hover. Clicking it reveals the coffee. */
 .roast-button {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: min(500px, 92%);
+  margin: 0 auto;
   background: none;
   border: none;
-  padding: 64px 0 0;              /* room above the snail for the steam */
+  padding: 64px 0 0;              /* room above the painting for the steam */
   cursor: pointer;
   animation: snail-sway 5s ease-in-out infinite alternate;
 }
 
 .roast-button img {
-  width: min(500px, 92%);
+  width: 100%;
   height: auto;
   display: block;
   transition: transform 0.3s ease;
@@ -117,7 +119,7 @@ img { max-width: 100%; }
 
 .roast-button:hover img { transform: translateY(-6px) rotate(-1deg); }
 
-/* Steam: three wisps rising above the snail, one after another */
+/* Steam: three wisps rising above the painting, one after another */
 .steam {
   position: absolute;
   top: 0;
@@ -211,6 +213,22 @@ img { max-width: 100%; }
   font-size: 1.25rem;
   color: var(--accent);
 }
+
+/* The Nano Roastery story: expand / collapse */
+.story-toggle {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 8px;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.story-toggle:hover { color: var(--accent-dark); }
 
 /* ---------- Long ghost logo (end of Nano Roastery) ---------- */
 .ghost-long {
