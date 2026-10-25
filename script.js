@@ -86,7 +86,7 @@ function requestForm(coffee) {
   );
 }
 
-// The popup that opens when someone clicks the bag
+// The popup that opens when someone clicks the hero painting
 function currentCoffeePopup(coffee) {
   return (
     '<img class="modal-photo" src="' + coffee.image + '" alt="Taste impression \u2014 ' + coffee.name + '.">' +
@@ -122,24 +122,34 @@ modal.addEventListener('change', function (event) {
   if (event.target && event.target.id === 'coffee') updateSizeRow();
 });
 
-// ---------- The bag: opens the coffee that is currently roasting ----------
+// ---------- The hero photo: the coffee that is currently roasting ----------
 var currentCoffee = COFFEES.filter(function (coffee) {
   return coffee.status === 'roasting';
 })[0];
+
+// The hero always shows the current roast's painting
+var heroCoffee = document.getElementById('hero-coffee');
+if (heroCoffee) {
+  heroCoffee.src = currentCoffee.image;
+  heroCoffee.alt = 'Taste impression \u2014 ' + currentCoffee.name + '.';
+}
 
 document.getElementById('open-current').addEventListener('click', function () {
   openModal(currentCoffeePopup(currentCoffee));
   updateSizeRow();
 });
 
-// ---------- The archive: one photo per coffee, click to open ----------
+// ---------- The archive: one photo per PAST coffee, click to open ----------
+// (the current roast is shown at the top of the page instead)
 var archiveGrid = document.getElementById('archive-grid');
 
-COFFEES.forEach(function (coffee) {
+COFFEES.filter(function (coffee) {
+  return coffee.status === 'archive';
+}).forEach(function (coffee) {
   var item = document.createElement('button');
   item.className = 'archive-item';
   item.type = 'button';
-  item.innerHTML = '<img src="' + coffee.image + '" alt="Taste impression \u2014 ' + coffee.name + '.">';
+  item.innerHTML = '<img loading="lazy" src="' + coffee.image + '" alt="Taste impression \u2014 ' + coffee.name + '.">';
   item.addEventListener('click', function () {
     openModal(archiveCoffeePopup(coffee));
   });
