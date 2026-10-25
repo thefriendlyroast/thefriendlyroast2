@@ -14,12 +14,7 @@
     <a class="logo-link" href="#whats-roasting">
       <img class="logo" src="images/snail.jpg" alt="the friendly roast logo">
     </a>
-    <nav class="menu">
-      <a href="#whats-roasting">What's Roasting</a>
-      <a href="#nano-roastery">Nano Roastery</a>
-      <a href="#coffee-archive">Coffee Archive</a>
-      <a class="subscribe-btn" href="#subscribe">Subscribe</a>
-    </nav>
+    <a class="subscribe-btn" href="#subscribe">Subscribe</a>
   </header>
 
   <main>
@@ -56,19 +51,21 @@
           "I roast coffee to see how the flavours transform - in each roast,
           each brew, each sip."
         </blockquote>
-        <ul class="timeline">
+        <!-- The story starts collapsed — script.js opens it with the button -->
+        <button type="button" class="story-toggle" id="story-toggle">how did the friendly roast begin?</button>
+        <ul class="timeline" id="story" hidden>
           <li>
             <span class="year">2021</span>
             <div>
               <strong>Kasper's roaster.</strong>
-              Michael's friend Kasper taught me to roast on his Gene Cafe
-              CBR-101e — 250 grams at a time, one experiment after another.
+              Michael's friend Kasper taught him on his Gene Cafe
+              CBR-101e; 250 grams at a time, one experiment after another.
               Kasper did online roasting courses at night. By day they put pen
               to paper noting down readings from the temperature probe on the
               Gene and the two other temperature probes Kasper had added into
               the machine. The simple on-off heating element in the Gene no
               longer satisfying Kasper's desire for roast control. Soon a
-              circuit board sat beside it plugged a laptop running artisan.
+              circuit board sat beside it plugged a laptop running Artisan.
             </div>
           </li>
           <li>
@@ -90,7 +87,7 @@
               <strong>Still curious.</strong>
               Michael sources beans from importers such as The Coffee Quest,
               This Side Up, Ally Coffee, Bette Buna, Attesa. Kasper and
-              Michael and occasionally their wives cup the samples, silently.
+              Michael, and occasionally their wives, cup the samples, silently.
               When a coffee compels Michael, usually because Kasper praises it,
               Michael thinks "I could happily drink this for the next few
               months" and the next roast mystery begins. He keeps roasting,
