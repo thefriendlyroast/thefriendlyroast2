@@ -109,7 +109,7 @@ img { max-width: 100%; }
 }
 
 .bag-button img {
-  width: min(420px, 80%);
+  width: min(560px, 92%);
   display: block;
   margin: 0 auto;
   transition: transform 0.3s ease;
@@ -206,6 +206,11 @@ img { max-width: 100%; }
 
 /* ---------- Subscribe section ---------- */
 .subscribe { text-align: center; }
+
+.subscribe .section-title {
+  max-width: 32ch;
+  margin: 0 auto 40px;
+}
 
 .subscribe-form {
   display: inline-flex;
