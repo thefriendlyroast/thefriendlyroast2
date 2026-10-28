@@ -4,7 +4,6 @@
    ink, burnt-orange accent, monospaced IBM Plex Mono.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&display=swap');
 
 :root {
   --beige: #E9DFCC;
@@ -26,7 +25,7 @@ body {
   margin: 0;
   background: var(--beige);
   color: var(--ink);
-  font-family: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-family: "Inconsolata Variable", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 1.0625rem;
   line-height: 1.7;
   text-transform: lowercase;   /* the whole site renders lower case */
